@@ -13,7 +13,7 @@ pipeline {
               containers:
                 - name: python
                   image: python:3.8
-                  command: ['python', 'app.py']  // Cambio aquí
+                  command: ['python', 'app.py'] 
             """
         }
     }
