@@ -1,7 +1,7 @@
 pipeline {
     agent {
         kubernetes {
-            label 'any'  
+            label 'any'
             defaultContainer 'python'
             yaml """
             apiVersion: v1
@@ -13,7 +13,7 @@ pipeline {
               containers:
                 - name: python
                   image: python:3.8
-                  command: ['sh', '-c', 'python app.py']
+                  command: ['python', 'app.py']  // Cambio aquí
             """
         }
     }
@@ -21,7 +21,11 @@ pipeline {
     stages {
         stage('Construir y Ejecutar') {
             steps {
-                echo "Ejecutando la aplicación..."
+                script {
+                    container('python') {
+                        sh 'python app.py'
+                    }
+                }
             }
         }
     }
