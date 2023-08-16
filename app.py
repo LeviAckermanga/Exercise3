@@ -5,7 +5,7 @@ class Person:
         self.ID = ID
 
 def main():
-    person = Person("Ejemplo", 25, "ABC123")
+    person = Person("Diego", 23, "ABCD1")
     print("Nombre:", person.name)
     print("Edad:", person.age)
     print("ID:", person.ID)
