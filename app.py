@@ -1,13 +1,14 @@
-# archivo app.py
-def main():
-    nombre = input("Ingrese su nombre: ")
-    edad = input("Ingrese su edad: ")
-    identificacion = input("Ingrese su ID: ")
+class Person:
+    def __init__(self, name, age, ID):
+        self.name = name
+        self.age = age
+        self.ID = ID
 
-    print("\nInformación registrada:")
-    print("Nombre:", nombre)
-    print("Edad:", edad)
-    print("ID:", identificacion)
+def main():
+    person = Person("Ejemplo", 25, "ABC123")
+    print("Nombre:", person.name)
+    print("Edad:", person.age)
+    print("ID:", person.ID)
 
 if __name__ == "__main__":
     main()
