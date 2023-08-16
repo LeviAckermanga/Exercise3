@@ -1,22 +1,17 @@
 pipeline {
     agent {
-        docker {
-            image 'python:3.8'
-            args '-u root'
-        }
+        label 'windows'
     }
     
     stages {
-        stage('Clonar Repositorio') {
+        stage('Construir y Ejecutar') {
             steps {
-                checkout scm
-            }
-        }
-        
-        stage('Ejecutar Registro') {
-            steps {
-                sh 'python app.py'
+                script {
+                    bat 'python app.py'
+                }
             }
         }
     }
+}
+
 }
